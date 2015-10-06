@@ -1,23 +1,73 @@
 ---
 layout: default
 ---
+<h3>Latest Post</h3>
 
-<div class="home">
+<div class="mdl-grid">
 
-  <h1 class="page-heading">Posts</h1>
+  {% for post in site.posts limit:1 %}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
+    <div class="mdl-cell mdl-cell--12-col dd-post-listing mdl-card mdl-shadow--2dp">
+      {% if post.banner %}
+        <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "img/posts/banners/" | prepend: site.baseurl}}) no-repeat 50%">
+        </div>
+      {% endif %}
+      <div class="mdl-card__supporting-text">
+        <h4>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h4>
+        <span class="post-meta">Posted by {{ post.author }}</span><br />
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Read More
+        </a>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+            <i class="material-icons">share</i>
+        </button>
+      </div>
+    </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  {% endfor %}
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
+
+<h3>Recent Posts</h3>
+
+<div class="mdl-grid">
+
+  {% for post in site.posts offset:1 %}
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone dd-post-listing mdl-card mdl-shadow--2dp">
+        {% if post.banner %}
+          <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "img/posts/banners/" | prepend: site.baseurl}}) no-repeat 50%">
+          </div>
+        {% endif %}
+        <div class="mdl-card__supporting-text">
+          <h4>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h4>
+          <span class="post-meta">Posted by {{ post.author }}</span><br />
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Read More
+          </a>
+          {% if post.share %}
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+              <i class="material-icons">share</i>
+            </button>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+  {% endfor %}
+
 
 </div>

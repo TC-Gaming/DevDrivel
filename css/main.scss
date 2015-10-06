@@ -1,52 +1,121 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
 
+// Colours
+$colour-background:       #0A0A0A;
+$colour-header:           #101010;
+$colour-card:             #151515;
+$colour-card-action:      #151515;
+$colour-card-border:      #101010;
+$cod-grey-vlight:         #1A1A1A;
+$gallery:                 #EEEEEE;
+$silver:                  #CCCCCC;
+$grey:                    #AAAAAA;
+$charcoal:                #555555;
 
+// Dimensions
+$content-width:           600px;
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+// Colour Defaults
+h1, h2, h3, h4, h5, span, p, a {
+  color: $silver;
+}
 
-$spacing-unit:     30px;
+// Heading Defaults
+h1, h2, h3, h4, h5 {
+  a {
+    text-decoration: none;
+  }
+}
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+h3 {
+  padding: 0px 16px;
+}
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+html, body {
+  background-color: $colour-background;
+}
 
-// Width of the content area
-$content-width:    800px;
+// Post Styles
+.post-header {
+  padding: 0px 16px;
+  h1 {
+    font-size: 3em;
+  }
+}
+p.post-meta {
+  color: $grey;
+}
+.post-content {
+  padding: 0px 16px 16px 16px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+}
+.post {
+  margin-top: 16px;
+  background-color: $colour-header;
+  img {
+    width: 100%;
+  }
+}
 
+.page-content {
+  margin: 0 auto;
+  max-width: $content-width;
+}
 
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
+.dd-post-listing {
+  min-height: 100px;
+  background-color: $colour-card;
+  margin-bottom: 25px;
+  color: $silver;
+  .mdl-card__title {
+    height: 150px;
+  }
+  .mdl-card__supporting-text {
+    h4 {
+      margin-top: 0px;
     }
+  }
+  .mdl-card__actions {
+    &.mdl-card--border {
+      border-top: solid 1px $colour-card-border;
+    }
+  }
+  .mdl-button {
+    &.mdl-button--colored {
+      color: $silver;
+    }
+  }
+}
+.button-dark {
+  color: $colour-card-action;
+}
+.mdl-mini-footer {
+  background-color: transparent;
+}
+a.copyright, a.tc-aff {
+  color: $charcoal;
+}
+li.separate {
+  padding-right: 20px;
+  border-right: solid 1px #333;
+}
+.mdl-layout__header {
+  background-color: $colour-header;
+  .mdl-layout__drawer-button {
+    color: $silver;
+  }
+}
+
+.mdl-layout__drawer {
+  background-color: $colour-background;
+  border-right: solid 1px $colour-card-border;
+  .mdl-navigation .mdl-navigation__link:hover {
+    background-color: $colour-header;
+  }
 }
 
 
-
-// Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+  'partials/logo',
+  'partials/syntax-highlighting';
