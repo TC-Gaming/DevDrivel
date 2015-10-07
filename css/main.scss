@@ -51,15 +51,36 @@ p.post-meta {
 
 }
 .post {
-  margin-top: 16px;
+  overflow: auto;
   background-color: $colour-header;
   img {
     width: 100%;
   }
 }
 
+// Drawer Styles
+.drawer-logo {
+  width: 239px;
+  height: 150px;
+  background-image: url("/img/logo/TC-Logo-v3-m.png");
+  background-size: 100px auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: $colour-header;
+}
+.drawer-link-icon {
+  float: left;
+}
+.drawer-link-label {
+  display: inline-block;
+  height: 24px;
+  float: left;
+  line-height: 24px;
+  padding-left: 16px;
+}
+
 .page-content {
-  margin: 0 auto;
+  margin: 16px auto;
   max-width: $content-width;
 }
 
@@ -92,6 +113,7 @@ p.post-meta {
 }
 .mdl-mini-footer {
   background-color: transparent;
+  padding: 32px;
 }
 a.copyright, a.tc-aff {
   color: $charcoal;
@@ -112,6 +134,29 @@ li.separate {
   border-right: solid 1px $colour-card-border;
   .mdl-navigation .mdl-navigation__link:hover {
     background-color: $colour-header;
+  }
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+  color: $silver;
+}
+
+@media (max-width: 600px) {
+  .page-content {
+    margin: 0 auto;
+  }
+  .header-logo {
+    display: block;
+    position: absolute;
+    left: calc(50% - 96px);
+  }
+  .mdl-mini-footer__left-section{
+    display: block;
+    margin: 8px auto;
+  }
+  .mdl-mini-footer__right-section {
+    display: block;
+    margin: 8px auto;
   }
 }
 

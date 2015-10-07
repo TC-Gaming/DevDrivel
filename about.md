@@ -2,6 +2,9 @@
 layout: page
 title: About
 permalink: /about/
+
+# page icon
+icon: "info_outline"
 ---
 
 Some text  
