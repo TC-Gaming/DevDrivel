@@ -1,6 +1,5 @@
 <header class="mdl-layout__header mdl-layout__header--waterfall">
   <div class="mdl-layout__header-row">
-    <a class="header-logo mdl-layout-title" href="/"></a>
     <div class="mdl-layout-spacer"></div>
     <nav class="mdl-navigation mdl-layout--large-screen-only">
       {% for page in site.pages %}
@@ -9,21 +8,50 @@
         {% endif %}
       {% endfor %}
     </nav>
+    <div class="search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+        <i class="material-icons">search</i>
+      </label>
+      <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" id="search-field">
+      </div>
+    </div>
+    <a class="header-logo mdl-layout-title" href="/"></a>
   </div>
 </header>
 <div class="mdl-layout__drawer">
     <a class="drawer-logo" href="/"></a>
+
+    <!-- Site links -->
+
     <span class="mdl-layout-title">{{ site.title }}</span>
     <nav class="mdl-navigation">
       {% for page in site.pages %}
         {% if page.title %}
           <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">
             <i class="drawer-link-icon material-icons">{% if page.icon %}{{ page.icon }}{% else %}keyboard_arrow_right{% endif %}</i>
-
             <span class="drawer-link-label">{{ page.title }}</span>
           </a>
         {% endif %}
       {% endfor %}
+      </a>
+    </nav>
+
+    <!-- Other links -->
+
+    <span class="mdl-layout-title">Elsewhere</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="http://tc-gaming.co.uk">
+        <i class="drawer-link-icon material-icons">home</i>
+        <span class="drawer-link-label">Home</span>
+      </a>
+      <a class="mdl-navigation__link" href="http://city-driving.co.uk">
+        <i class="drawer-link-icon material-icons">keyboard_arrow_right</i>
+        <span class="drawer-link-label">CityDriving</span>
+      </a>
+      <a class="mdl-navigation__link" href="http://tc-racing.co.uk">
+        <i class="drawer-link-icon material-icons">keyboard_arrow_right</i>
+        <span class="drawer-link-label">Racing</span>
       </a>
     </nav>
 </div>

@@ -1,0 +1,32 @@
+@media (max-width: 600px) {
+  .page-content {
+    margin: 0 auto;
+  }
+  .header-logo {
+    display: block;
+    position: absolute;
+    left: calc(50% - 104px);
+    background-size: auto 25px;
+    margin-top: 3px;
+    background-position: 50%;
+    transition: opacity .25s;
+  }
+  .search-box.is-focused {
+    width: calc(100% - 48px);
+    &~ .header-logo {
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .mdl-textfield__expandable-holder {
+      width: 100%;
+    }
+  }
+  .mdl-mini-footer__left-section{
+    display: block;
+    margin: 8px auto;
+  }
+  .mdl-mini-footer__right-section {
+    display: block;
+    margin: 8px auto;
+  }
+}

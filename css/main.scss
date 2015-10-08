@@ -32,6 +32,10 @@ h3 {
   padding: 0px 16px;
 }
 
+.non-card-text {
+  padding: 0px 16px;
+}
+
 html, body {
   background-color: $colour-background;
 }
@@ -75,7 +79,7 @@ p.post-meta {
 
 // Drawer Styles
 .drawer-logo {
-  width: 239px;
+  width: 100%;
   height: 150px;
   background-image: url("/img/logo/TC-Logo-v3-m.png");
   background-size: 100px auto;
@@ -97,6 +101,10 @@ p.post-meta {
 .page-content {
   margin: 16px auto;
   max-width: $content-width;
+}
+
+.mdl-textfield__input {
+  border-bottom: 1px solid $charcoal;
 }
 
 .dd-post-listing {
@@ -156,26 +164,7 @@ li.separate {
   color: $silver;
 }
 
-@media (max-width: 600px) {
-  .page-content {
-    margin: 0 auto;
-  }
-  .header-logo {
-    display: block;
-    position: absolute;
-    left: calc(50% - 96px);
-  }
-  .mdl-mini-footer__left-section{
-    display: block;
-    margin: 8px auto;
-  }
-  .mdl-mini-footer__right-section {
-    display: block;
-    margin: 8px auto;
-  }
-}
-
-
 @import
   'partials/logo',
-  'partials/syntax-highlighting';
+  'partials/syntax-highlighting',
+  'partials/media';
