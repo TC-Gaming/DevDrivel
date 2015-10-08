@@ -17,8 +17,15 @@ layout: default
         <h4>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h4>
-        <span class="post-meta">Posted by {{ post.author }}</span><br />
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class="post-details">
+          {% for author in post.authors %}
+            <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "img/people/" | prepend: site.baseurl}}.png')"></div>
+          {% endfor %}
+          <div class="post-details-text">
+            <span class="post-meta">Posted by {{ post.authors[0].name }}{% if post.authors[1] %} &amp; {{ post.authors[1].name }}{% endif %}</span><br />
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </div>
+        </div>
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
