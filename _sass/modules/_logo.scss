@@ -1,4 +1,4 @@
-@mixin header-logo {
+@mixin logo {
   background-image: url('/img/logo/TCDevDrivel_flat_35h.png');
   background-position: 0 center;
   background-repeat: no-repeat;
@@ -7,9 +7,22 @@
   width: 215px;
   opacity: 1;
   transition: opacity .25s;
-
   &:hover {
     opacity: .75;
     transition: opacity .25s;
   }
+}
+
+@mixin header-logo {
+  @include logo;
+}
+
+@mixin mobile-header-logo {
+  @include logo;
+  display: none;
+  position: absolute;
+  left: calc(50% - 104px);
+  background-size: auto 25px;
+  margin-top: 3px;
+  background-position: 50%;
 }

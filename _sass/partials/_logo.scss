@@ -3,3 +3,7 @@
 .header-logo {
   @include header-logo;
 }
+
+.mobile-header-logo {
+  @include mobile-header-logo;
+}
