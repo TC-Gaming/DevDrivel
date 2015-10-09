@@ -32,6 +32,10 @@ h3 {
   padding: 0px 16px;
 }
 
+.last-link {
+  border-top: solid 1px $colour-card-border;
+}
+
 .non-card-text {
   padding: 0px 16px;
 }
@@ -155,8 +159,11 @@ li.separate {
 .mdl-layout__drawer {
   background-color: $colour-background;
   border-right: solid 1px $colour-card-border;
-  .mdl-navigation .mdl-navigation__link:hover {
-    background-color: $colour-header;
+  .mdl-navigation {
+    padding-top: 0px;
+    .mdl-navigation__link:hover {
+      background-color: $colour-header;
+    }
   }
 }
 
