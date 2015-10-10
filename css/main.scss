@@ -55,7 +55,7 @@ p.post-meta {
   color: $grey;
 }
 .post-content {
-  padding: 0px 16px 16px 16px;
+  padding: 16px 16px 16px 16px;
 
 }
 .post {
@@ -67,6 +67,7 @@ p.post-meta {
 }
 
 .post-details {
+  overflow: auto;
   .post-details-avatar {
     width: 36px;
     height: 36px;
