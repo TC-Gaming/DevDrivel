@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Howlin Test"
-date:   2015-10-09 23:20:00
 categories: test
 authors:
  - name: Howlin

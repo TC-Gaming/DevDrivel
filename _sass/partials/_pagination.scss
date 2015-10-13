@@ -1,0 +1,29 @@
+@import 'modules/pagination';
+
+.pagination {
+  @include pagination;
+}
+
+.pagination-previous {
+  @include pagination-previous;
+}
+
+.pagination-next {
+  @include pagination-next;
+}
+
+.page-number {
+  @include page-number;
+}
+
+.pagination-section-left {
+  @include pagination-section-left;
+}
+
+.pagination-section-centre {
+  @include pagination-section-centre;
+}
+
+.pagination-section-right {
+  @include pagination-section-right;
+}

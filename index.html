@@ -2,66 +2,32 @@
 layout: default
 ---
 
-<h3>Latest Post</h3>
+{% if paginator.previous_page %}
 
-<div class="mdl-grid">
+  <div class="mdl-grid">
 
-  {% for post in site.posts limit:1 %}
-
-    <div class="mdl-cell mdl-cell--12-col dd-post-listing mdl-card mdl-shadow--2dp">
-      {% if post.banner %}
-        <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "img/posts/banners/" | prepend: site.baseurl}}) no-repeat 50%">
-        </div>
-      {% endif %}
-      <div class="mdl-card__supporting-text">
-        <h4>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h4>
-        <div class="post-details">
-          {% for author in post.authors %}
-            <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "img/people/" | prepend: site.baseurl}}.png')"></div>
-          {% endfor %}
-          <div class="post-details-text">
-            <span class="post-meta">Posted by {{ post.authors[0].name }}{% if post.authors[1] %} &amp; {{ post.authors[1].name }}{% endif %}</span><br />
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          </div>
-        </div>
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Read More
-        </a>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
-            <i class="material-icons">share</i>
-        </button>
-      </div>
-    </div>
-
-  {% endfor %}
-
-</div>
-
-<h3>Recent Posts</h3>
-
-<div class="mdl-grid">
-
-  {% for post in site.posts offset:1 %}
+    {% for post in paginator.posts %}
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone dd-post-listing mdl-card mdl-shadow--2dp">
+
         {% if post.banner %}
-          <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "img/posts/banners/" | prepend: site.baseurl}}) no-repeat 50%">
-          </div>
+
+          <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "/img/posts/banners/"}}) no-repeat 50%"></div>
+
         {% endif %}
+
         <div class="mdl-card__supporting-text">
           <h4>
             <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </h4>
           <div class="post-details">
+
             {% for author in post.authors %}
-              <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "img/people/" | prepend: site.baseurl}}.png')"></div>
+
+              <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "/img/people/"}}.png')"></div>
+
             {% endfor %}
+
             <div class="post-details-text">
               <span class="post-meta">Posted by {{ post.authors[0].name }}{% if post.authors[1] %} &amp; {{ post.authors[1].name }}{% endif %}</span><br />
               <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -69,20 +35,157 @@ layout: default
           </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            Read More
-          </a>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">READ MORE</a>
+
           {% if post.share %}
-          <div class="mdl-card__menu">
-            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
-              <i class="material-icons">share</i>
-            </button>
-          </div>
+
+            <div class="mdl-card__menu">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+                <i class="material-icons">share</i>
+              </button>
+            </div>
+
           {% endif %}
+
         </div>
       </div>
 
+    {% endfor %}
+
+  </div>
+
+{% else %}
+
+  <h3>Latest Post</h3>
+
+  {% for post in site.posts limit:1 %}
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col dd-post-listing mdl-card mdl-shadow--2dp">
+
+        {% if post.banner %}
+
+          <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "/img/posts/banners/"}}) no-repeat 50%"></div>
+
+        {% endif %}
+
+        <div class="mdl-card__supporting-text">
+          <h4>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h4>
+          <div class="post-details">
+
+            {% for author in post.authors %}
+
+              <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "/img/people/"}}.png')"></div>
+
+            {% endfor %}
+
+            <div class="post-details-text">
+              <span class="post-meta">Posted by {{ post.authors[0].name }}{% if post.authors[1] %} &amp; {{ post.authors[1].name }}{% endif %}</span><br />
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">READ MORE</a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+            <i class="material-icons">share</i>
+          </button>
+        </div>
+      </div>
+    </div>
+
   {% endfor %}
 
+  <h3>Recent Posts</h3>
+
+  <div class="mdl-grid">
+
+    {% for post in paginator.posts offset:1 %}
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone dd-post-listing mdl-card mdl-shadow--2dp">
+
+        {% if post.banner %}
+
+          <div class="mdl-card__title" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%), url({{ post.banner | prepend: "/img/posts/banners/"}}) no-repeat 50%"></div>
+
+        {% endif %}
+
+        <div class="mdl-card__supporting-text">
+          <h4>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h4>
+          <div class="post-details">
+
+            {% for author in post.authors %}
+
+              <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "/img/people/"}}.png')"></div>
+
+            {% endfor %}
+
+            <div class="post-details-text">
+              <span class="post-meta">Posted by {{ post.authors[0].name }}{% if post.authors[1] %} &amp; {{ post.authors[1].name }}{% endif %}</span><br />
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">READ MORE</a>
+
+          {% if post.share %}
+
+            <div class="mdl-card__menu">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+              <i class="material-icons">share</i>
+              </button>
+            </div>
+
+          {% endif %}
+
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+{% endif %}
+
+<!-- pagination links -->
+
+<div class="pagination">
+
+  <div class="pagination-section-left">
+
+    {% if paginator.previous_page %}
+
+      <a href="{{ paginator.previous_page_path }}" class="pagination-previous mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">PREVIOUS</a>
+
+    {% else %}
+
+      <a class="pagination-previous mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled>PREVIOUS</a>
+
+    {% endif %}
+
+  </div>
+  <div class="pagination-section-centre">
+    <span class="page-number">Page : {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  </div>
+  <div class="pagination-section-right">
+
+    {% if paginator.next_page %}
+
+      <a href="{{ paginator.next_page_path }}" class="pagination-next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">NEXT</a>
+
+    {% else %}
+
+      <a class="pagination-next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled>NEXT</a>
+
+    {% endif %}
+
+  </div>
 
 </div>

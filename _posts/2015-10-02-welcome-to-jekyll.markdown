@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-date:   2015-10-02 18:05:49
 categories: jekyll update
 authors:
  - name: Pete

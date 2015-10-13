@@ -12,6 +12,8 @@ $gallery:                 #EEEEEE;
 $silver:                  #CCCCCC;
 $grey:                    #AAAAAA;
 $charcoal:                #555555;
+$endeavour:               #0060A1;
+$deep-cerulean:           #006CB5;
 
 // Dimensions
 $content-width:           600px;
@@ -56,7 +58,6 @@ p.post-meta {
 }
 .post-content {
   padding: 16px 16px 16px 16px;
-
 }
 .post {
   overflow: auto;
@@ -106,6 +107,7 @@ p.post-meta {
 .page-content {
   margin: 16px auto;
   max-width: $content-width;
+  overflow: auto;
 }
 
 .mdl-textfield__input {
@@ -115,7 +117,6 @@ p.post-meta {
 .dd-post-listing {
   min-height: 100px;
   background-color: $colour-card;
-  margin-bottom: 25px;
   color: $silver;
   .mdl-card__title {
     height: 150px;
@@ -174,5 +175,6 @@ li.separate {
 
 @import
   'partials/logo',
+  'partials/pagination',
   'partials/syntax-highlighting',
   'partials/media';

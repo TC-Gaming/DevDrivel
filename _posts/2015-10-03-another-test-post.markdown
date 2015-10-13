@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Another Test Post"
-date:   2015-10-03 17:26:00
 categories: test
 authors:
  - name: Pete

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Dan Test"
-date:   2015-10-10 00:37:00
 categories: test
 authors:
  - name: Dan

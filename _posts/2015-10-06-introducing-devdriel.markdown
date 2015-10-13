@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Introducing DevDrivel"
-date:   2015-10-06 17:22:00
 categories: devdrivel announcement github jekyll mdl
 authors:
  - name: Pete

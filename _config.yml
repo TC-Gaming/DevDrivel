@@ -9,7 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://devdrivel.tc-gaming.co.uk" # the base hostname & protocol for your site
 twitter_username: TCCityDriving
 github_username:  TC-Gaming
-paginate: 2
+paginate: 10
 
 # Build settings
 markdown: kramdown
