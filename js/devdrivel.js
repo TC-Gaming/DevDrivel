@@ -24,10 +24,8 @@ function setupListeners() {
   searchField.addEventListener('keyup', searchFieldKeyUp);
 
   // When enter is pressed
-  function searchFieldChange(e) {
-    if(e.keyCode == 13) {
-      startSearch(searchField.value);
-    }
+  function searchFieldChange() {
+    startSearch(searchField.value);
   };
 
   // When focus is lost
@@ -41,6 +39,9 @@ function setupListeners() {
       searchField.value = "";
       searchField.blur();
       collapseSearch();
+    }
+    if(e.keyCode == 13) {
+      startSearch(searchField.value);
     }
   };
 }
