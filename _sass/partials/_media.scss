@@ -7,12 +7,15 @@
   }
   .mobile-header-logo {
     display: block;
+    opacity: 1;
+    transition: opacity 5s;
   }
-  .search-box.is-focused {
+  .search-box.is-focused, .search-box.is-dirty {
     width: calc(100% - 48px);
     &~ .mobile-header-logo {
       opacity: 0;
-      transition: opacity .25s;
+      display: none;
+      transition: opacity 5s;
     }
     .mdl-textfield__expandable-holder {
       width: 100%;

@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Dan Test"
-categories: test
-authors:
- - name: Dan
+categories: [test]
+authors: [Dan]
 
 # optional banner image
 banner: "default.png"

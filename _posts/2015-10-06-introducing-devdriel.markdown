@@ -1,10 +1,8 @@
 ---
 layout: post
 title:  "Introducing DevDrivel"
-categories: devdrivel announcement github jekyll mdl
-authors:
- - name: Pete
- - name: Elmo
+categories: [devdrivel, announcement, github, jekyll, mdl]
+authors: [Pete, Elmo]
 
 # optional banner image
 banner: "github-jekyll-mdl.png"

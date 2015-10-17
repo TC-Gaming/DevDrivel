@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Howlin Test"
-categories: test
-authors:
- - name: Howlin
+categories: [test]
+authors: [Howlin]
 
 # optional banner image
 banner: "default.png"

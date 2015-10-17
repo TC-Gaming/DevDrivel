@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-categories: jekyll update
-authors:
- - name: Pete
+categories: [jekyll]
+tags: [test1, test2]
+authors: [Pete]
 
 # optional banner image
 banner: "default.png"

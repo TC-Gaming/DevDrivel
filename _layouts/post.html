@@ -11,10 +11,10 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-details">
       {% for author in page.authors %}
-        <div class="post-details-avatar" style="background-image: url('{{ author.name | prepend: "/img/people/"}}.png')"></div>
+        <div class="post-details-avatar" style="background-image: url('{{ author | prepend: "/img/people/"}}.png')"></div>
       {% endfor %}
       <div class="post-details-text">
-        <span class="post-meta">Posted by {{ page.authors[0].name }}{% if page.authors[1] %} &amp; {{ page.authors[1].name }}{% endif %}</span><br />
+        <span class="post-meta">Posted by {% for author in page.authors %}{{ author }}{% unless forloop.rindex == 2 or forloop.last %}, {% endunless %}{% if forloop.rindex == 2 %} &amp; {% endif %}{% endfor %}</span><br />
         <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span>
       </div>
     </div>

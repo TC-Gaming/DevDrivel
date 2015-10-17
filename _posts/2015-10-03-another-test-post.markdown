@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Another Test Post"
-categories: test
-authors:
- - name: Pete
+categories: [test]
+authors: [Elmo, Dan, Pete]
 
 # optional banner image
 banner: "default.png"
