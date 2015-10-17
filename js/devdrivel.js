@@ -19,14 +19,8 @@ function setupListeners() {
 
   // Search box listeners
   var searchField = document.getElementById('search-field');
-  searchField.addEventListener('change', searchFieldChange);
   searchField.addEventListener('blur', searchFieldBlur);
   searchField.addEventListener('keyup', searchFieldKeyUp);
-
-  // When enter is pressed
-  function searchFieldChange() {
-    startSearch(searchField.value);
-  };
 
   // When focus is lost
   function searchFieldBlur() {
