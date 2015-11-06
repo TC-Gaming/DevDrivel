@@ -4,6 +4,7 @@ title:  "Welcome to Jekyll!"
 categories: [jekyll]
 tags: [test1, test2]
 authors: [Pete]
+short_description: "An introduction to Jekyll. Simple, blog-aware, static sites"
 
 # optional banner image
 banner: "default.png"
@@ -20,14 +21,20 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight javascript linenos %}
+```javascript
 // Hi :)
 var a = "test";
 function b(msg){
+  this.altMsg = ":D";
   console.log(msg);
 }
 b(a);
-{% endhighlight %}
+
+b.prototype.showAltMsg = function() {
+  console.log(this.altMsg);
+}
+b.showAltMsg();
+```
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
 

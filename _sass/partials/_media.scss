@@ -8,25 +8,32 @@
   .mobile-header-logo {
     display: block;
     opacity: 1;
-    transition: opacity 5s;
+    transition: opacity .25s;
+  }
+  .mdl-mini-footer {
+    padding: 32px 16px;
   }
   .search-box.is-focused, .search-box.is-dirty {
     width: calc(100% - 48px);
     &~ .mobile-header-logo {
       opacity: 0;
-      display: none;
-      transition: opacity 5s;
+      transition: opacity .25s;
     }
     .mdl-textfield__expandable-holder {
       width: 100%;
     }
   }
+}
+
+@media (max-width: 500px) {
   .mdl-mini-footer__left-section{
     display: block;
+    float: none;
     margin: 8px auto;
   }
   .mdl-mini-footer__right-section {
     display: block;
+    float: none;
     margin: 8px auto;
   }
 }

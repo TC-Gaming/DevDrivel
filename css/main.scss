@@ -4,9 +4,10 @@
 // Colours
 $colour-background:       #0A0A0A;
 $colour-header:           #101010;
+$colour-code:             #222222;
 $colour-card:             #151515;
 $colour-card-action:      #151515;
-$colour-card-border:      #101010;
+$colour-card-border:      #1E1E1E;
 $cod-grey-vlight:         #1A1A1A;
 $gallery:                 #EEEEEE;
 $silver:                  #CCCCCC;
@@ -44,6 +45,8 @@ h3 {
 
 html, body {
   background-color: $colour-background;
+  color: $gallery;
+  height: 100%;
 }
 
 // Post Styles
@@ -53,7 +56,7 @@ html, body {
     font-size: 3em;
   }
 }
-p.post-meta {
+span.post-meta {
   color: $grey;
 }
 .post-content {
@@ -61,10 +64,14 @@ p.post-meta {
 }
 .post {
   overflow: auto;
-  background-color: $colour-header;
+  background-color: $colour-card;
   img {
     width: 100%;
   }
+}
+
+.post-title {
+  margin: 24px 0px 8px 0px;
 }
 
 .post-details {
@@ -76,10 +83,11 @@ p.post-meta {
     background-size: 36px;
     background-repeat: no-repeat;
     float: left;
-    margin-right: 16px;
+    margin: 16px 16px 0px 0px;
   }
   .post-details-text {
     float: left;
+    margin-top: 16px;
   }
 }
 
@@ -122,8 +130,12 @@ p.post-meta {
     height: 150px;
   }
   .mdl-card__supporting-text {
+    width: auto;
     h4 {
-      margin-top: 0px;
+      margin: 0px;
+      a {
+        color: $gallery;
+      }
     }
   }
   .mdl-card__actions {
@@ -158,9 +170,14 @@ li.separate {
   }
 }
 
+.mdl-layout__content {
+  overflow: visible;
+}
+
 .mdl-layout__drawer {
   background-color: $colour-background;
-  border-right: solid 1px $colour-card-border;
+  // border-right: solid 1px $colour-card-border;
+  border-right: solid 1px transparent;
   .mdl-navigation {
     padding-top: 0px;
     .mdl-navigation__link:hover {
@@ -173,8 +190,24 @@ li.separate {
   color: $silver;
 }
 
+.post-excerpt {
+  margin-top: 16px;
+  p {
+    width: 100%;
+    font-size: 13px;
+    line-height: 17px;
+    margin: 0;
+    color: $silver;
+  }
+}
+
+pre {
+  background-color: $colour-code;
+}
+
 @import
   'partials/logo',
   'partials/pagination',
+  'partials/search-box',
   'partials/syntax-highlighting',
   'partials/media';
