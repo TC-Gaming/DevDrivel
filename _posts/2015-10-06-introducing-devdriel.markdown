@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Introducing DevDrivel"
-categories: [devdrivel, announcement, github, jekyll, mdl]
-authors: [Pete, Elmo]
+tags: [devdrivel, announcement, github, jekyll, mdl]
+authors: [pete, elmo]
 short_description: "Introduction to the new [TC] Gaming development blog"
 
 # optional banner image
