@@ -1,29 +1,33 @@
 @import 'modules/scrollbar';
 
-::-webkit-scrollbar {
-  @include webkit-scrollbar;
-}
+.mdl-layout__drawer {
 
-::-webkit-scrollbar-button {
-  @include webkit-scrollbar-button;
-}
+  &::-webkit-scrollbar {
+    @include webkit-scrollbar;
+  }
 
-::-webkit-scrollbar-track {
-  @include webkit-scrollbar-track;
-}
+  &::-webkit-scrollbar-button {
+    @include webkit-scrollbar-button;
+  }
 
-::-webkit-scrollbar-track-piece {
-  @include webkit-scrollbar-track-piece;
-}
+  &::-webkit-scrollbar-track {
+    @include webkit-scrollbar-track;
+  }
 
-::-webkit-scrollbar-thumb {
-  @include webkit-scrollbar-thumb;
-}
+  &::-webkit-scrollbar-track-piece {
+    @include webkit-scrollbar-track-piece;
+  }
 
-::-webkit-scrollbar-corner {
-  @include webkit-scrollbar-corner;
-}
+  &::-webkit-scrollbar-thumb {
+    @include webkit-scrollbar-thumb;
+  }
 
-::-webkit-resizer {
-  @include webkit-resizer;
+  &::-webkit-scrollbar-corner {
+    @include webkit-scrollbar-corner;
+  }
+
+  &::-webkit-resizer {
+    @include webkit-resizer;
+  }
+
 }
