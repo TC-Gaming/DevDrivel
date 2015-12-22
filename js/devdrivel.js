@@ -68,8 +68,8 @@ function setupListeners() {
   s.searchField.addEventListener('keyup', searchFieldKeyUp);
 
   // Post listeners
-  s.postButtons.shorturl.addEventListener('click', shareShorturl);
-  s.postButtons.github.addEventListener('click', shareGithub);
+  if(s.postButtons.shorturl != null) s.postButtons.shorturl.addEventListener('click', shareShorturl);  
+  if(s.postButtons.github != null) s.postButtons.github.addEventListener('click', shareGithub);
 
 }
 

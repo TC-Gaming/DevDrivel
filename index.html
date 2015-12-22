@@ -34,7 +34,7 @@ layout: default
 
             {% for author in post.authors %}
 
-              <div class="post-details-avatar" style="background-image: url('{{ author | prepend: "/img/people/"}}.png')"></div>
+              <div class="post-details-avatar" style="background-image: url('{{ author | downcase | prepend: "/img/people/"}}.png')"></div>
 
             {% endfor %}
 
@@ -90,7 +90,7 @@ layout: default
 
             {% for author in post.authors %}
 
-              <div class="post-details-avatar" style="background-image: url('{{ author | prepend: "/img/people/"}}.png')"></div>
+              <div class="post-details-avatar" style="background-image: url('{{ author | downcase | prepend: "/img/people/"}}.png')"></div>
 
             {% endfor %}
 
@@ -114,7 +114,7 @@ layout: default
             </div>
 
           {% endif %}
-          
+
         </div>
       </div>
     </div>
@@ -146,7 +146,7 @@ layout: default
 
             {% for author in post.authors %}
 
-              <div class="post-details-avatar" style="background-image: url('{{ author | prepend: "/img/people/"}}.png')"></div>
+              <div class="post-details-avatar" style="background-image: url('{{ author | downcase | prepend: "/img/people/"}}.png')"></div>
 
             {% endfor %}
 

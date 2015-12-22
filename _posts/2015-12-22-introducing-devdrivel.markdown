@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducing DevDrivel"
 tags: [devdrivel, announcement, github, jekyll, mdl]
-authors: [pete, elmo]
+authors: [Pete, Elmo]
 short_description: "Introduction to the new [TC] Gaming development blog"
 
 # [TC] ShortURL
@@ -22,7 +22,7 @@ share: false
 ---
 The opening post of a blog is always the worst. It's the post that you look back on and think, "Oh my God, who wrote that drivel". Well we're calling it now, the content of the posts on this blog will probably be total garbage to most but we hope someone somewhere appreciates what we're writing and comes back for more.
 
-**We're developers, we write drivel, welcome to DevDrivel.**
+**We're developers and we write drivel.**
 
 If you want to read more about why we decided to build this blog, head over to our [about] page.
 
@@ -30,7 +30,7 @@ If you want to read more about why we decided to build this blog, head over to o
 
 ## We built a blog!
 
-The full story about how we built DevDrivel will come in a later post. To give you a flavour of what's to come the remainder of this post will be a brief description of each of its core components.
+The full story of how we built DevDrivel will come in a later post. The remainder of this post aims to give you a flavour of things to come by outlining the core components of DevDrivel.
 
 ### Jekyll
 
@@ -40,7 +40,7 @@ Although Jekyll comes with a standard template, you can create your own using HT
 
 ### Jekyll and GitHub Pages
 
-Another cool thing about Jekyll is that [GitHub Pages] supports Jekyll as standard. This means it's **free** to host from a public repository! DevDrivel is being served from GitHub Pages, and here's the [live repo] to prove it.
+Another cool thing about Jekyll is that [GitHub Pages] supports it as standard. This means it's **free** to host from a public repository! DevDrivel is being served from GitHub Pages, and here's the [live repo] to prove it.
 
 So is it really free to host a Jekyll site with GitHub Pages? **Yes**, so long as you're happy to make the code open-source. If you're not happy to explicitly expose your source code, you can pay GitHub to host the project in a private repo or you can host Jekyll on your own server.
 
