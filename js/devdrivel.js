@@ -29,7 +29,7 @@ var s = new session();
 function session() {
 
   // In debug mode, the script will log debug messages
-  this.debug = true;
+  this.debug = false;
 
   // XMLHttpRequest Object
   this.xhr;
@@ -68,7 +68,7 @@ function setupListeners() {
   s.searchField.addEventListener('keyup', searchFieldKeyUp);
 
   // Post listeners
-  if(s.postButtons.shorturl != null) s.postButtons.shorturl.addEventListener('click', shareShorturl);  
+  if(s.postButtons.shorturl != null) s.postButtons.shorturl.addEventListener('click', shareShorturl);
   if(s.postButtons.github != null) s.postButtons.github.addEventListener('click', shareGithub);
 
 }
@@ -166,7 +166,6 @@ function startSearch(term) {
         }
         // Check tags
         if(!match && Object.keys(el.tags).length != 0) {
-          console.log(el.tags);
           el.tags.forEach(function(el2, i2, arr2) {
             if(s.searchTerm.isInside(el2.tag)) {
               match = true;
@@ -183,12 +182,6 @@ function startSearch(term) {
       displaySearchResult(totalMatches);
     }
     s.searchResults.classList.remove('hidden');
-  }
-
-  // - displayNoSearchResults
-  // Display no search results message
-  function displayNoSearchResults() {
-    console.log("naw");
   }
 }
 

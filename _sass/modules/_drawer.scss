@@ -1,0 +1,41 @@
+@mixin drawer {
+  background-color: $colour-background;
+  border-right: solid 1px transparent;
+
+  .mdl-navigation {
+    padding-top: 0px;
+
+    .mdl-navigation__link:hover {
+      background-color: $colour-header;
+    }
+  }
+}
+
+@mixin drawer-logo {
+  width: 100%;
+  height: 150px;
+  background-image: url("/img/logo/TC-Logo-v3-m.png");
+  background-size: 100px auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: $colour-header;
+}
+
+@mixin drawer-link-icon {
+  float: left;
+
+  &.fa {
+    width: 24px;
+    height: 24px;
+    font-size: 22px;
+    text-align: center;
+  }
+}
+
+@mixin drawer-link-label {
+  display: inline-block;
+  height: 24px;
+  float: left;
+  line-height: 24px;
+  padding-left: 16px;
+}

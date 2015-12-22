@@ -1,0 +1,17 @@
+@mixin page-content {
+  margin: 16px auto;
+  max-width: $content-width;
+  overflow: auto;
+
+  h3 {
+    padding: 0px 16px;
+  }
+
+  .post-content h3 {
+    padding: 0;
+  }
+}
+
+@mixin page {
+  overflow: auto;
+}

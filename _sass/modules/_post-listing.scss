@@ -1,0 +1,36 @@
+@mixin post-listing {
+  min-height: 100px;
+  background-color: $colour-card;
+  color: $silver;
+
+  .mdl-card__title {
+    height: 150px;
+  }
+
+  .mdl-card__supporting-text {
+    width: auto;
+
+    h4 {
+      margin: 0px;
+
+      a {
+        color: $gallery;
+      }
+    }
+  }
+
+  .mdl-card__actions {
+
+    &.mdl-card--border {
+      border-top: solid 1px $colour-card-border;
+    }
+  }
+
+  .mdl-button {
+
+    &.mdl-button--colored {
+      color: $silver;
+      font-weight: bold;
+    }
+  }
+}

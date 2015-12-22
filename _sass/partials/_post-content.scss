@@ -3,3 +3,15 @@
 .post-content {
   @include post-content;
 }
+
+.post {
+  @include post;
+}
+
+.post-header {
+  @include post-header;
+}
+
+.post-details {
+  @include post-details;
+}

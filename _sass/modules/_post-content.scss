@@ -11,7 +11,6 @@
 
   h3 {
     font-size: 20px;
-    padding: 0;
   }
 
   hr {
@@ -20,5 +19,51 @@
 
   img {
     width: auto;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+@mixin post {
+    overflow: auto;
+    background-color: $colour-card;
+
+    img {
+      width: 100%;
+    }
+}
+
+@mixin post-header {
+  overflow: auto;
+  padding: 0px 16px;
+
+  h1 {
+    font-size: 3em;
+    margin: 24px 0px 8px 0px;
+  }
+}
+
+@mixin post-details {
+  overflow: auto;
+
+  .post-details-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    background-size: 36px;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 16px 16px 0px 0px;
+  }
+
+  .post-details-text {
+    float: left;
+    margin-top: 16px;
+
+    .post-meta {
+      color: $grey;
+    }
   }
 }

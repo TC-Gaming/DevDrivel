@@ -7,6 +7,7 @@ $colour-header:           #101010;
 $colour-code:             #222222;
 $colour-card:             #151515;
 $colour-card-action:      #151515;
+$colour-v-dark-grey:      #1C1C1C;
 $colour-card-border:      #1E1E1E;
 $cod-grey-vlight:         #1A1A1A;
 $gallery:                 #EEEEEE;
@@ -16,9 +17,16 @@ $charcoal:                #555555;
 $endeavour:               #0060A1;
 $deep-cerulean:           #006CB5;
 
+// Scrollbar settings
+$scrollbar-thickness:     8px;
+$scrollbar-border-radius: 0px;
+$scrollbar-bg:            rgba(255,255,255,.1);
+$scrollbar-bg-alt:        rgba(255,255,255,.3);
+
 // Dimensions
 $content-width:           600px;
 
+// Wrapper Defaults
 html, body {
   background-color: $colour-background;
   color: $gallery;
@@ -37,129 +45,15 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-h3 {
-  padding: 0px 16px;
-}
-
+// Helpers
 .hidden {
   display: none;
-}
-
-.last-link {
-  border-top: solid 1px $colour-card-border;
-}
-
-.non-card-text {
-  padding: 0px 16px;
-}
-
-article p {
-  text-align: justify;
-}
-
-// Post Styles
-.post-header {
-  padding: 0px 16px;
-  h1 {
-    font-size: 3em;
-  }
-}
-span.post-meta {
-  color: $grey;
-}
-
-.post {
-  overflow: auto;
-  background-color: $colour-card;
-  img {
-    width: 100%;
-  }
-}
-
-.page {
-  overflow: auto;
-}
-
-.post-title {
-  margin: 24px 0px 8px 0px;
-}
-
-.post-details {
-  overflow: auto;
-  .post-details-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 36px;
-    background-size: 36px;
-    background-repeat: no-repeat;
-    float: left;
-    margin: 16px 16px 0px 0px;
-  }
-  .post-details-text {
-    float: left;
-    margin-top: 16px;
-  }
-}
-
-// Drawer Styles
-.drawer-logo {
-  width: 100%;
-  height: 150px;
-  background-image: url("/img/logo/TC-Logo-v3-m.png");
-  background-size: 100px auto;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-color: $colour-header;
-}
-.drawer-link-icon {
-  float: left;
-}
-.drawer-link-label {
-  display: inline-block;
-  height: 24px;
-  float: left;
-  line-height: 24px;
-  padding-left: 16px;
-}
-
-.page-content {
-  margin: 16px auto;
-  max-width: $content-width;
-  overflow: auto;
 }
 
 .mdl-textfield__input {
   border-bottom: 1px solid $charcoal;
 }
 
-.dd-post-listing {
-  min-height: 100px;
-  background-color: $colour-card;
-  color: $silver;
-  .mdl-card__title {
-    height: 150px;
-  }
-  .mdl-card__supporting-text {
-    width: auto;
-    h4 {
-      margin: 0px;
-      a {
-        color: $gallery;
-      }
-    }
-  }
-  .mdl-card__actions {
-    &.mdl-card--border {
-      border-top: solid 1px $colour-card-border;
-    }
-  }
-  .mdl-button {
-    &.mdl-button--colored {
-      color: $silver;
-      font-weight: bold;
-    }
-  }
-}
 .button-dark {
   color: $colour-card-action;
 }
@@ -178,18 +72,6 @@ li.separate {
   background-color: $colour-header;
   .mdl-layout__drawer-button {
     color: $silver;
-  }
-}
-
-.mdl-layout__drawer {
-  background-color: $colour-background;
-  // border-right: solid 1px $colour-card-border;
-  border-right: solid 1px transparent;
-  .mdl-navigation {
-    padding-top: 0px;
-    .mdl-navigation__link:hover {
-      background-color: $colour-header;
-    }
   }
 }
 
@@ -344,4 +226,8 @@ pre[class*="language-"] {
   'partials/pagination',
   'partials/search',
   'partials/media',
-  'partials/post-content';
+  'partials/post-content',
+  'partials/page-content',
+  'partials/post-listing',
+  'partials/drawer',
+  'partials/scrollbar';

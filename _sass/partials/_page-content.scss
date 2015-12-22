@@ -1,0 +1,9 @@
+@import 'modules/page-content';
+
+.page-content {
+  @include page-content;
+}
+
+.page {
+  @include page;
+}

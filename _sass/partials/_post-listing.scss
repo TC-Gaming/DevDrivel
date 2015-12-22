@@ -1,0 +1,5 @@
+@import 'modules/post-listing';
+
+.dd-post-listing {
+  @include post-listing;
+}
