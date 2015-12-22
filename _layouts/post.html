@@ -22,6 +22,15 @@ layout: default
 
   <article class="post-content">
     {{ content }}
+
+    <a href="mailto:devdrivel@city-driving.co.uk" class="big-button blue mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">SEND FEEDBACK</a>
+    <button id="share-github" class="big-button-share mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}" data-url="{{ page.github }}">
+      <i class="fa fa-github"></i>
+    </button>
+    <button id="share-url" class="big-button-share mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}" data-share="{{ page.shorturl }}">
+      <i class="material-icons">share</i>
+    </button>
+    <input class="share-url-input hidden" id="share-url-text" value="{{ page.shorturl }}"></input>
   </article>
 
 </div>

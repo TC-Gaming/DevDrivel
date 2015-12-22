@@ -41,6 +41,10 @@ h3 {
   padding: 0px 16px;
 }
 
+.hidden {
+  display: none;
+}
+
 .last-link {
   border-top: solid 1px $colour-card-border;
 }
@@ -63,9 +67,7 @@ article p {
 span.post-meta {
   color: $grey;
 }
-.post-content {
-  padding: 16px 16px 16px 16px;
-}
+
 .post {
   overflow: auto;
   background-color: $colour-card;
@@ -242,6 +244,24 @@ pre[class*="language-"] {
 
 }
 
+.big-button-share {
+  margin-top: 32px;
+  float: right;
+  margin-left: 10px;
+}
+
+.share-url-input {
+  margin-top: 32px;
+  float: right;
+  background-color: transparent;
+  border: 0;
+  height: 32px;
+  color: $silver;
+  outline: none;
+  width: auto;
+  text-align: right;
+}
+
 .big-button {
   margin-top: 32px;
   font-weight: bold;
@@ -322,5 +342,6 @@ pre[class*="language-"] {
 @import
   'partials/logo',
   'partials/pagination',
-  'partials/search-box',
-  'partials/media';
+  'partials/search',
+  'partials/media',
+  'partials/post-content';

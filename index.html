@@ -6,7 +6,7 @@ layout: default
   <div class="announcement-image"></div>
   <h2 class="announcement-title">Hello there!</h3>
   <p class="announcement-text">Welcome to DevDrivel, the [TC] Gaming development blog.</p>
-  <a href="/2015/10/06/introducing-devdriel.html" class="big-button blue mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Read our introductory post</a>
+  <a href="/2015/12/22/introducing-devdrivel.html" class="big-button blue mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Read our introductory post</a>
 </div>
 
 {% if paginator.previous_page %}
@@ -50,7 +50,7 @@ layout: default
           {% if post.share %}
 
             <div class="mdl-card__menu">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}" data-url="{{ post.shorturl }}">
                 <i class="material-icons">share</i>
               </button>
             </div>
@@ -104,9 +104,17 @@ layout: default
           <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">READ MORE</a>
         </div>
         <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
-            <i class="material-icons">share</i>
-          </button>
+
+          {% if post.share %}
+
+            <div class="mdl-card__menu">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}" data-url="{{ post.shorturl }}">
+              <i class="material-icons">share</i>
+              </button>
+            </div>
+
+          {% endif %}
+          
         </div>
       </div>
     </div>
@@ -154,7 +162,7 @@ layout: default
           {% if post.share %}
 
             <div class="mdl-card__menu">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect {% if post.high_contrast %}button-dark{% endif %}" data-url="{{ post.shorturl }}">
               <i class="material-icons">share</i>
               </button>
             </div>

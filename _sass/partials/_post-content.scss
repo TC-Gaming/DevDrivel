@@ -1,0 +1,5 @@
+@import 'modules/post-content';
+
+.post-content {
+  @include post-content;
+}

@@ -1,6 +1,7 @@
 
 // Copyright [TC] 2006-2015
 // DevDrivel
+// tc-g.uk/devdrivel
 //
 // ---
 //
@@ -9,7 +10,8 @@
 //  1) - Setup & Main Loop
 //  2) - Search
 //  3) - MDL
-//  4) - Helper Functions
+//  4) - Post Interaction
+//  5) - Helper Functions
 //
 // ---
 
@@ -38,8 +40,23 @@ function session() {
   // DOM element of search box
   this.searchField = document.getElementById('search-field');
 
+  // DOM element of search results wrapper
+  this.searchResults = document.getElementById('search-results');
+
+  // DOM element of search results table
+  this.searchResultsTable = document.getElementById('search-results-table');
+
+  // DOM element of search box wrapper
+  this.searchBox = document.getElementById('search-box');
+
   // The current search term
   this.searchTerm;
+
+  // Post buttons
+  this.postButtons = {
+    shorturl: document.getElementById('share-url'),
+    github: document.getElementById('share-github')
+  };
 }
 
 // + setupListeners
@@ -47,8 +64,13 @@ function session() {
 function setupListeners() {
 
   // Search box listeners
-  s.searchField.addEventListener('blur', searchFieldBlur);
+  s.searchField.addEventListener('blur', collapseSearch);
   s.searchField.addEventListener('keyup', searchFieldKeyUp);
+
+  // Post listeners
+  s.postButtons.shorturl.addEventListener('click', shareShorturl);
+  s.postButtons.github.addEventListener('click', shareGithub);
+
 }
 
 // + setupHighlighting
@@ -75,11 +97,6 @@ function setupHighlighting() {
 //
 // ---
 
-// When focus is lost
-function searchFieldBlur() {
-  collapseSearch();
-}
-
 // After a key is pressed
 //   e        : event object
 function searchFieldKeyUp(e) {
@@ -99,12 +116,14 @@ function searchFieldKeyUp(e) {
 
 // + startSearch
 // Search for a keyword to generate a list of matching posts
-//   searchTerm   : term to search
-function startSearch(searchTerm) {
+//   term   : term to search
+function startSearch(term) {
+
+  s.searchResultsTable.innerHTML = "";
 
   // Store search term
-  out("startSearch : " + searchTerm);
-  s.searchTerm = searchTerm;
+  out("startSearch : " + term);
+  s.searchTerm = new searchTerm(term);
 
   // Get contents of the JSON search file
   fetchSearchData();
@@ -123,8 +142,8 @@ function startSearch(searchTerm) {
   function handleAJAXResponse() {
     if(s.xhr.readyState === XMLHttpRequest.DONE) {
       if(s.xhr.status === 200) {
-        s.searchJSON = s.xhr.response;
-        displaySearchResults();
+        s.searchJSON = JSON.parse(s.xhr.response);
+        filterSearchResults();
         out("XHR : SUCCESS");
       } else {
         out("XHR : ERROR (xhr.status)");
@@ -133,11 +152,101 @@ function startSearch(searchTerm) {
     }
   }
 
-  // - displaySearchResults
-  // Display the results of the search
-  function displaySearchResults() {
-
+  // - filterSearchResults
+  // Filter the results of the search
+  function filterSearchResults() {
+    var totalMatches = 0;
+    var match = false;
+    s.searchJSON.forEach(function(el, i, arr) {
+      match = false;
+      if(Object.keys(el).length != 0) {
+        // Check title
+        if(s.searchTerm.isInside(el.title)) {
+          match = true;
+        }
+        // Check tags
+        if(!match && Object.keys(el.tags).length != 0) {
+          console.log(el.tags);
+          el.tags.forEach(function(el2, i2, arr2) {
+            if(s.searchTerm.isInside(el2.tag)) {
+              match = true;
+            }
+          });
+        }
+      }
+      if(match) {
+        totalMatches++;
+        displaySearchResult(totalMatches, el);
+      }
+    });
+    if(totalMatches == 0) {
+      displaySearchResult(totalMatches);
+    }
+    s.searchResults.classList.remove('hidden');
   }
+
+  // - displayNoSearchResults
+  // Display no search results message
+  function displayNoSearchResults() {
+    console.log("naw");
+  }
+}
+
+// + searchTerm
+// a search term
+//   value      : the search term
+function searchTerm(value) {
+  this.value = value;
+}
+
+// + isInside
+// returns true if string is contained in another
+//   substr     : search string
+searchTerm.prototype.isInside = function(substr) {
+  var str = this.value.toLowerCase();
+      substr = substr.toLowerCase();
+  if(str.indexOf(substr) > -1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+// + displaySearchResult
+// Add a search result to results table
+//   id         : id of row
+//   result     : result object
+function displaySearchResult(id, result) {
+  var row = document.createElement('tr');
+  var title = document.createElement('td');
+  title.classList.add('mdl-data-table__cell--non-numeric');
+  if(id == 0) {
+    title.innerHTML = "No results found";
+    row.appendChild(title);
+    s.searchResultsTable.appendChild(row);
+  } else {
+    var resultID = 'search-result-' + id;
+    var date = document.createElement('td');
+    title.innerHTML = result.title;
+    if(result.date) date.innerHTML = getResultDate(result.date);
+    row.setAttribute('id', resultID);
+    row.appendChild(title);
+    row.appendChild(date);
+    s.searchResultsTable.appendChild(row);
+    // click event
+    document.getElementById(resultID).addEventListener('mousedown', function() {
+      window.location.href = result.url;
+    });
+  }
+}
+
+// + getResultDate
+// Returns the date of a result
+//   resultDate   : date string
+function getResultDate(resultDate) {
+  var date = new Date(resultDate);
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 }
 
 // ---
@@ -149,12 +258,37 @@ function startSearch(searchTerm) {
 // + collapseSearch
 // Collapse the search box
 function collapseSearch() {
-  document.getElementById('search-box').classList.remove('is-dirty');
+  s.searchBox.classList.remove('is-dirty');
+  s.searchResults.classList.add('hidden');
 };
 
 // ---
 //
-//  4) Helper Functions
+//  4) Post Interaction
+//
+// ---
+
+// + shareShorturl
+// Share post via short url
+function shareShorturl() {
+  document.getElementById('share-url-text').classList.remove('hidden');
+  document.getElementById('share-url-text').select();
+}
+
+// + shareGithub
+// visit post on GitHub
+
+function shareGithub() {
+  var postPath = window.location.pathname;
+  postPath = postPath.split('/').join('-').slice(1).slice(0, postPath.length-6);
+  var ghPath = "https://github.com/TC-Gaming/DevDrivel/blob/gh-pages/_posts/";
+  var ext = ".markdown";
+  window.location.href = ghPath + postPath + ext;
+}
+
+// ---
+//
+//  5) Helper Functions
 //
 // ---
 

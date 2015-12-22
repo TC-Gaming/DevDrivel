@@ -6,6 +6,12 @@
 
       {% include header.html %}
       <main class="mdl-layout__content">
+        <div id="search-results" class="search-blind hidden mdl-shadow--2dp">
+          <table class="mdl-data-table mdl-js-data-table">
+            <tbody id="search-results-table">
+            </tbody>
+          </table>
+        </div>
         <div class="page-content">
           {{ content }}
         </div>

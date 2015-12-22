@@ -1,0 +1,23 @@
+@mixin search-box {
+  z-index: 10;
+}
+
+@mixin search-blind {
+  position: absolute;
+  height: auto;
+  background-color: rgba(0,0,0,.5);
+  z-index: 10;
+  width: 100%;
+  max-width: 450px;
+  right: 0;
+
+  .mdl-data-table {
+    width: 100%;
+    background-color: $colour-card;
+
+    tbody tr:hover {
+      background-color: $cod-grey-vlight;
+      cursor: pointer;
+    }
+  }
+}

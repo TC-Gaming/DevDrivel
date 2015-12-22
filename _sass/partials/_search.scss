@@ -1,0 +1,9 @@
+@import 'modules/search';
+
+.search-box {
+  @include search-box;
+}
+
+.search-blind {
+  @include search-blind;
+}
