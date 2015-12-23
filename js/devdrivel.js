@@ -37,20 +37,14 @@ function session() {
   // Contents of JSON file used for searching posts
   this.searchJSON;
 
-  // DOM element of search box
-  this.searchField = document.getElementById('search-field');
-
-  // DOM element of search results wrapper
-  this.searchResults = document.getElementById('search-results');
-
-  // DOM element of search results table
-  this.searchResultsTable = document.getElementById('search-results-table');
-
-  // DOM element of search box wrapper
-  this.searchBox = document.getElementById('search-box');
-
   // The current search term
   this.searchTerm;
+
+  // DOM elements
+  this.searchBox = document.getElementById('search-box');
+  this.searchField = document.getElementById('search-field');
+  this.searchResults = document.getElementById('search-results');
+  this.searchResultsTable = document.getElementById('search-results-table');
 
   // Post buttons
   this.postButtons = {
@@ -110,15 +104,16 @@ function searchFieldKeyUp(e) {
 
   // Enter
   if(e.keyCode == 13) {
-    startSearch(s.searchField.value);
+    search(s.searchField.value);
   }
 }
 
-// + startSearch
+// + search
 // Search for a keyword to generate a list of matching posts
 //   term   : term to search
-function startSearch(term) {
+function search(term) {
 
+  // Clear previous results
   s.searchResultsTable.innerHTML = "";
 
   // Store search term
@@ -183,31 +178,31 @@ function startSearch(term) {
     }
     s.searchResults.classList.remove('hidden');
   }
-}
 
-// + searchTerm
-// a search term
-//   value      : the search term
-function searchTerm(value) {
-  this.value = value;
-}
-
-// + isInside
-// returns true if string is contained in another
-//   substr     : search string
-searchTerm.prototype.isInside = function(substr) {
-  var str = this.value.toLowerCase();
-      substr = substr.toLowerCase();
-  if(str.indexOf(substr) > -1) {
-    return true;
-  } else {
-    return false;
+  // + searchTerm
+  // a search term
+  //   value      : the search term
+  function searchTerm(value) {
+    this.value = value;
   }
-};
+
+  // + isInside
+  // returns true if string is contained in another
+  //   substr     : search string
+  searchTerm.prototype.isInside = function(substr) {
+    var str = this.value.toLowerCase();
+        substr = substr.toLowerCase();
+    if(str.indexOf(substr) > -1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+}
 
 // + displaySearchResult
 // Add a search result to results table
-//   id         : id of row
+//   id         : id of row (0 = no results found)
 //   result     : result object
 function displaySearchResult(id, result) {
   var row = document.createElement('tr');
@@ -231,15 +226,15 @@ function displaySearchResult(id, result) {
       window.location.href = result.url;
     });
   }
-}
 
-// + getResultDate
-// Returns the date of a result
-//   resultDate   : date string
-function getResultDate(resultDate) {
-  var date = new Date(resultDate);
-  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  // + getResultDate
+  // Returns the date of a result
+  //   resultDate   : date string
+  function getResultDate(resultDate) {
+    var date = new Date(resultDate);
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  }
 }
 
 // ---
