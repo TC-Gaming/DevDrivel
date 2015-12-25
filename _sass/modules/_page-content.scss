@@ -14,4 +14,9 @@
 
 @mixin page {
   overflow: auto;
+
+  h4:not(:first-child) {
+    margin-top: 52px;
+  }
+
 }

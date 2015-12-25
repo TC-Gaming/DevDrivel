@@ -1,0 +1,7 @@
+@mixin mdl-layout__header {
+  background-color: $colour-header;
+  
+  .mdl-layout__drawer-button {
+    color: $silver;
+  }
+}

@@ -1,0 +1,70 @@
+@mixin lang-definition {
+  font-style: italic;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: $colour-card;
+  border-radius: 2px;
+
+  h4 {
+    margin: 0;
+  }
+
+  h5 {
+    margin-top: 0;
+    font-size: 12pt;
+  }
+
+  p:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+@mixin about-profile {
+  width: 100%;
+  box-sizing: border-box;
+
+  img {
+    display: block;
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+
+  h5 {
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 0px;
+    color: $silver;
+    font-weight: bold;
+  }
+
+  p {
+    margin-top: 10px;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  i {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  .mdl-card__supporting-text {
+    background-color: $colour-header;
+  }
+
+  & > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+}
+
+@mixin hidden {
+  display: none;
+}

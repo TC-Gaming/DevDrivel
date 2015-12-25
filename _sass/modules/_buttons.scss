@@ -1,0 +1,43 @@
+@mixin big-button {
+  margin-top: 32px;
+  font-weight: bold;
+  color: #FFF;
+
+  &.blue {
+    background-color: #0060A1;
+
+    &:hover {
+      background-color: #0060A1;
+    }
+  }
+
+  &.green {
+    background-color: #47A100;
+
+    &:hover {
+      background-color: #47A100;
+    }
+  }
+}
+
+@mixin big-button-share {
+  margin-top: 32px;
+  float: right;
+  margin-left: 10px;
+}
+
+@mixin button-dark {
+  color: $colour-card-action;
+}
+
+@mixin share-url-input {
+  margin-top: 32px;
+  float: right;
+  background-color: transparent;
+  border: 0;
+  height: 32px;
+  color: $silver;
+  outline: none;
+  width: auto;
+  text-align: right;
+}

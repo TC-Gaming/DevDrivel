@@ -21,3 +21,7 @@
     }
   }
 }
+
+@mixin mdl-textfield__input {
+  border-bottom: 1px solid $charcoal;
+}

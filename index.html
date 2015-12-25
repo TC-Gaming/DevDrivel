@@ -6,7 +6,7 @@ layout: default
   <div class="announcement-image"></div>
   <h2 class="announcement-title">Hello there!</h3>
   <p class="announcement-text">Welcome to DevDrivel, the [TC] Gaming development blog.</p>
-  <a href="/2015/12/22/introducing-devdrivel.html" class="big-button blue mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Read our introductory post</a>
+  <a href="/2015/12/25/introducing-devdrivel.html" class="big-button blue mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Read our introductory post</a>
 </div>
 
 {% if paginator.previous_page %}
@@ -15,7 +15,7 @@ layout: default
 
     {% for post in paginator.posts %}
 
-      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone dd-post-listing mdl-card mdl-shadow--2dp">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone tc-mdl-card mdl-card mdl-shadow--2dp">
 
         {% if post.banner %}
 
@@ -71,7 +71,7 @@ layout: default
   {% for post in site.posts limit:1 %}
 
     <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--12-col dd-post-listing mdl-card mdl-shadow--2dp">
+      <div class="mdl-cell mdl-cell--12-col tc-mdl-card mdl-card mdl-shadow--2dp">
 
         {% if post.banner %}
 
@@ -127,7 +127,7 @@ layout: default
 
     {% for post in paginator.posts offset:1 %}
 
-      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone dd-post-listing mdl-card mdl-shadow--2dp">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone tc-mdl-card mdl-card mdl-shadow--2dp">
 
         {% if post.banner %}
 

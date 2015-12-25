@@ -1,4 +1,4 @@
-@mixin post-listing {
+@mixin tc-mdl-card {
   min-height: 100px;
   background-color: $colour-card;
   color: $silver;
@@ -31,6 +31,17 @@
     &.mdl-button--colored {
       color: $silver;
       font-weight: bold;
+    }
+  }
+
+  .post-excerpt {
+    margin-top: 16px;
+    p {
+      width: 100%;
+      font-size: 13px;
+      line-height: 17px;
+      margin: 0;
+      color: $silver;
     }
   }
 }

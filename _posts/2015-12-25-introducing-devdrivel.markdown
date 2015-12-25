@@ -6,7 +6,7 @@ authors: [Pete, Elmo]
 short_description: "Introduction to the new [TC] Gaming development blog"
 
 # [TC] ShortURL
-shorturl: "tc-g.uk/AKVo"
+shorturl: "tc-g.uk/NtSi"
 
 # Post on GitHub
 github: "#"
@@ -20,15 +20,11 @@ high_contrast: true
 # add a share button
 share: false
 ---
-The opening post of a blog is always the worst. It's the post that you look back on and think, "Oh my God, who wrote that drivel". Well we're calling it now, the content of the posts on this blog will probably be total garbage to most but we hope someone somewhere appreciates what we're writing and comes back for more.
-
-**We're developers and we write drivel.**
-
-If you want to read more about why we decided to build this blog, head over to our [about] page.
-
----
 
 ## We built a blog!
+The opening post of a blog is always the worst. It's the post that you look back on and think, "Oh my God, who wrote that drivel". Well we're calling it now, the content of the posts on this blog will probably be total garbage to most but we hope someone somewhere appreciates what we're writing and comes back for more. If you want to read more about why we decided to build this blog, head over to our [about] page.
+
+**We're developers and we write drivel.**
 
 The full story of how we built DevDrivel will come in a later post. The remainder of this post aims to give you a flavour of things to come by outlining the core components of DevDrivel.
 

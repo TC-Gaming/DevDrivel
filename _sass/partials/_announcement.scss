@@ -1,0 +1,5 @@
+@import 'modules/announcement';
+
+.announcement {
+  @include announcement;
+}

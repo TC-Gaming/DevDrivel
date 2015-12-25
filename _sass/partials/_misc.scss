@@ -1,0 +1,15 @@
+@import 'modules/misc';
+
+// About page
+.lang-definition {
+  @include lang-definition;
+}
+
+.about-profile {
+  @include about-profile;
+}
+
+// Helpers
+.hidden {
+  @include hidden;
+}

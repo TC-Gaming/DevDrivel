@@ -7,9 +7,11 @@
 
   h2 {
     font-size: 24px;
+    line-height: 24px;
   }
 
   h3 {
+    margin: 25px 0px 5px 0px;
     font-size: 20px;
   }
 
@@ -23,6 +25,19 @@
 
   p {
     text-align: justify;
+  }
+
+  .highlight {
+    overflow: auto;
+  }
+
+  pre {
+    background-color: $colour-code;
+  }
+
+  pre[class*="language-"] {
+    margin: 0px 0px 10px 0px;
+    overflow-x: scroll;
   }
 }
 

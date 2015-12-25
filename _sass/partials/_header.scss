@@ -1,0 +1,9 @@
+@import 'modules/header';
+
+.mdl-layout__header {
+  @include mdl-layout__header;
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+  color: $silver;
+}

@@ -1,0 +1,13 @@
+@mixin mdl-mini-footer {
+  background-color: transparent;
+  padding: 32px;
+
+  a.copyright, a.tc-aff {
+    color: $charcoal;
+  }
+
+  li.separate {
+    padding-right: 20px;
+    border-right: solid 1px #333;
+  }
+}
