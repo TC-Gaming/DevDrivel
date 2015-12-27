@@ -1,0 +1,43 @@
+// Colours
+$colour-background:       #0A0A0A;
+$colour-header:           #101010;
+$colour-code:             #222222;
+$colour-card:             #151515;
+$colour-card-action:      #151515;
+$colour-v-dark-grey:      #1C1C1C;
+$colour-card-border:      #1E1E1E;
+$cod-grey-vlight:         #1A1A1A;
+$gallery:                 #EEEEEE;
+$silver:                  #CCCCCC;
+$grey:                    #AAAAAA;
+$charcoal:                #555555;
+$endeavour:               #0060A1;
+$deep-cerulean:           #006CB5;
+
+// Scrollbar settings
+$scrollbar-thickness:     8px;
+$scrollbar-border-radius: 0px;
+$scrollbar-bg:            rgba(255,255,255,.1);
+$scrollbar-bg-alt:        rgba(255,255,255,.3);
+
+// Dimensions
+$content-width:           600px;
+
+// Wrapper Defaults
+html, body {
+  background-color: $colour-background;
+  color: $gallery;
+  height: 100%;
+  }
+
+// Colour Defaults
+h1, h2, h3, h4, h5, span, p, a {
+  color: $silver;
+}
+
+// Heading Defaults
+h1, h2, h3, h4, h5 {
+  a {
+    text-decoration: none;
+  }
+}

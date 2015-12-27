@@ -9,6 +9,10 @@
   @include about-profile;
 }
 
+.about-profiles {
+  @include about-profiles;
+}
+
 // Helpers
 .hidden {
   @include hidden;

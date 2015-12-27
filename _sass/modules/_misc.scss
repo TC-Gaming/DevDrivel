@@ -20,6 +20,10 @@
   }
 }
 
+@mixin about-profiles {
+  margin-bottom: 15px;
+}
+
 @mixin about-profile {
   width: 100%;
   box-sizing: border-box;
