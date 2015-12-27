@@ -54,7 +54,7 @@ There will be no regular release schedule for posts, they will appear whenever w
 
 Thanks for reading and we hope you'll check back soon.
 
-Have a very merry Christmas and a happy new year!
+We hope you had a very merry Christmas and wish you a happy new year!
 
 [about]: /about
 [Wordpress]: http://wordpress.com
