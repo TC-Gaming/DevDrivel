@@ -10,11 +10,8 @@ github_username:  TC-Gaming
 excerpt_separator: <!--more-->
 paginate: 10
 
-# Build settings
-markdown: redcarpet
-
-# kramdown settings
 kramdown:
   input: GFM
+  highlighter: pygments
 
 gems: [jekyll-paginate]

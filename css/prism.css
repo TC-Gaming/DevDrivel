@@ -74,6 +74,9 @@ pre[class*="language-"] {
 .token.string {
   color: #149b93;
 }
+.token.function {
+  color: #b9b5b8;
+}
 .token.selector {
   color: #c85e7c;
 }

@@ -3,14 +3,15 @@
  */
 .highlight {
 
-  padding: 10px;
+  padding: 0px;
+  margin: 0px;
   border-radius: 2px;
   background: $colour-code;
-  margin-bottom: 10px;
   // @extend %vertical-rhythm;
 
   pre {
     margin: 0px;
+    padding: 1em 1em 1em 3.5em;
   }
 
   &:hover {
