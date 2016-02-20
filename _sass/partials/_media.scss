@@ -2,6 +2,9 @@
   .page-content {
     margin: 0 auto;
   }
+  .post-header h1 {
+    font-size: 2.5em;
+  }
   .header-logo {
     display: none;
   }
@@ -26,6 +29,14 @@
 }
 
 @media (max-width: 500px) {
+  .post-header h1 {
+    font-size: 2.5em;
+  }
+  .post-content {
+    h2 {
+      font-size: 20px;
+    }
+  }
   .mdl-mini-footer__left-section{
     display: block;
     float: none;
