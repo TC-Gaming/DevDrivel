@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Build apps with our new REST API"
+title:  "Build apps with our new API"
 tags: [api, statistics, developer]
 authors: [Pete]
-short_description: "Build applications using our new API"
+short_description: "Build applications using our brand new REST API. Make use of all public CityDriving statistics and much more."
 
 # [TC] ShortURL
 shorturl: "tc-g.uk/jVaC"
