@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Build apps with our new API"
-tags: [api, statistics, developer]
+tags: [api, statistics, stats, developer, develop, dev]
 authors: [Pete]
 short_description: "Build applications using our brand new REST API. Make use of all public CityDriving statistics and much more."
 
@@ -18,7 +18,7 @@ banner: "tc-gaming-api.png"
 high_contrast: true
 
 # add a share button
-share: false
+share: true
 ---
 
 ## Build applications using our brand new API
