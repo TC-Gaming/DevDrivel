@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[TC] Gaming API"
+title:  "Build apps with our new REST API"
 tags: [api, statistics, developer]
 authors: [Pete]
 short_description: "Build applications using our new API"
@@ -21,7 +21,7 @@ high_contrast: true
 share: false
 ---
 
-## Build applications using our brand new API!
+## Build applications using our brand new API
 
 Chuck, Elmo and myself have been busy working on bringing the community a modern way to build applications that use the data from our game servers including all of the public CityDriving statistics. And now it's ready for public consumption.
 
