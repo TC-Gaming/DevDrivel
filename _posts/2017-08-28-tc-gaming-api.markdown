@@ -6,7 +6,7 @@ authors: [Pete]
 short_description: "Build applications using our brand new REST API. Make use of all public CityDriving statistics and much more."
 
 # [TC] ShortURL
-shorturl: "tc-g.uk/jVaC"
+shorturl: "tc-g.uk/Gdmp"
 
 # Post on GitHub
 github: "#"
