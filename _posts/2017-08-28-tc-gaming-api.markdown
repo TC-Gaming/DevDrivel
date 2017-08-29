@@ -18,7 +18,7 @@ banner: "tc-gaming-api.png"
 high_contrast: true
 
 # add a share button
-share: true
+share: false
 ---
 
 ## Build applications using our brand new API
